@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.java.model.BookDetails" table="BOOKDETAILS">
+		<id name="bookDetailsId" type="java.lang.Integer">
+			<column name="BOOKDETAILSID" />
+			<generator class="increment" />
+		</id>
+		<property name="bookId" type="int" insert="false"
+			update="false">
+			<column name="BOOKID" />
+		</property>
+		<property name="bookName" type="string">
+			<column name="BOOKNAME" length="30" />
+		</property>
+		<property name="studentName" type="string">
+			<column name="STUDENTNAME" length="30" />
+		</property>
+		<property name="studentClass" type="string">
+			<column name="STUDENTCLASS" length="30" />
+		</property>
+		<property name="dateOfIssue" type="string">
+			<column name="DATEOFISSUE" length="30" />
+		</property>
+		<!-- <many-to-one name="Book" class="com.java.model.Book"
+			not-null="true" column="BOOKID" unique="true" cascade="all"
+			fetch="join">
+		</many-to-one> -->
+	</class>
+</hibernate-mapping>

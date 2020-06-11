@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.java.model.Book" table="BOOK">
+    <id name="bookId" type="java.lang.Integer">
+    <column name="BOOKID"/>
+    </id>  
+      <property name="studentId" type="int" insert="false" update="false">
+            <column name="STUDENTID" />
+        </property>
+    <property name="bookName" type="string">
+            <column name="BOOKNAME" length="30" />
+        </property>
+            <property name="bookDescription" type="string">
+            <column name="BOOKDESCRIPTION" length="50" />
+        </property>
+          
+        
+   <many-to-one name="Student" class="com.java.model.Student" 
+       not-null="true" column="STUDENTID" unique="true" cascade="all" fetch="join"></many-to-one>
+  		</class>
+  		
+        </hibernate-mapping>
